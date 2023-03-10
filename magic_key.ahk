@@ -7,9 +7,8 @@
 !f::Send, {End}
 !e::Send, {Enter}
 
+
 ; Obsidian专用快捷键
-
-
 #ifWinActive, ahk_exe Obsidian.exe
 {
     ; 选中当前行
@@ -31,13 +30,14 @@
     !w::
         Send, {Text}<br>
     Return
-    ; 注释
-    !r::
-        Send, {Text}<!---->
-        Send, {left 3}
-    Return
-    ; 代码块
-    !k::
-        Send, {Text}``````
+}
+
+; word专用快捷键
+#IfWinActive, ahk_exe WINWORD.EXE
+{
+    ; 选中当前行
+    !c::
+        Send, {Home}
+        Send, {ShiftDown}{End}{ShiftUp}
     Return
 }
